@@ -3,6 +3,40 @@
     margin: 0;
     padding: 0;
     font-family:'Merriweather', sans-serif;
-    font-size: 20px;
+    font-size : 20px;
+
+}
+header{
+    height: 15%;
+    width: 100%;
+}
+footer{
+    height: 10%;
 }
 
+.container{
+max-width: 1200px;
+margin: 0 auto;/*para que no se salga de los 1200 pixeles del margen*/
+
+}
+
+#footer2{
+    background-color: #24262b;
+    padding: 80px 0;    
+    
+}
+
+.footer-rows{
+    display: flex;
+}
+
+.footer-links{
+width: 25%;
+padding: 0 15px;
+}
+
+.footer-links h4{
+    font-size: 20px;
+    color: antiquewhite;    
+
+}
