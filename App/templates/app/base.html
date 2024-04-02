@@ -7,8 +7,8 @@
     {% bootstrap_javascript %}
 
     {%block css%}
-    <link rel="stylesheet" href="{%static 'css/base.css'%}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="{% static '/css/base.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"><!--botones-->
     {%endblock css%}
 
     <meta charset="UTF-8">
@@ -16,49 +16,79 @@
     <title>Dickson's Barber</title>
 </head>
 <body>
+  <section>
+
+  
     {%load static%}
 
     <!-- Encabezado-->
     <header>
-      <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="{%url 'home'%}"><img src="{%static 'img/icons/icon.png'%}" alt="" style="height: 60px; width: 60px;"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarScroll">
-            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{%url 'home'%}">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{%url 'aboutUs'%}">Nosotros</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
-                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                  <li><a class="dropdown-item" href="#">Corte de pelo</a></li>
-                  <li><a class="dropdown-item" href="#">Perfilado de barba</a></li>
-                  <li><a class="dropdown-item" href="#">Limpieza facial</a></li>
-                  <li><a class="dropdown-item" href="#">Rizos permanentes</a></li>
-                  <li><a class="dropdown-item" href="#">Teñido de pelo</a></li>
-                </ul>
-              </li>
-            </ul>
+      <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="{%url 'home'%}"><img src="{%static 'img/icons/icon.png'%}" alt="" style="height: 60px; width: 60px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+              <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{%url 'home'%}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{%url 'aboutUs'%}">Nosotros</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                    <li><a class="dropdown-item" href="#">Corte de pelo</a></li>
+                    <li><a class="dropdown-item" href="#">Perfilado de barba</a></li>
+                    <li><a class="dropdown-item" href="#">Limpieza facial</a></li>
+                    <li><a class="dropdown-item" href="#">Rizos permanentes</a></li>
+                    <li><a class="dropdown-item" href="#">Teñido de pelo</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </header>
     <!--Fin del encabezado-->
     {% block content %}
+    <div>
+      <h1>Texto de ejemplo</h1>
+    </div>
     {% endblock content%}
-
+    <br>
+    <br>
     <!--Footer-->
-    <footer class="footer">
-      <h1>hasdfasdf</h1>
-
+    <footer class="footer2">
+      <div class="container">
+        <div class="footer-rows">
+          <div class="footer-links">
+            <h4>Información</h4>
+            <li><a href="#">Politicas y privacidad</a></li>
+            <li><a href="#">Términos y condiciones</a></li>
+          </div>
+          <hr>
+          <div class="footer-links">
+            <h4>Contacto</h4>
+            <li>+569 29353619</li>
+            <li>correo@gmail.com</li>
+          </div>
+          <hr>
+          <div class="social-links">
+            <h4>Redes sociales</h4>
+            <li><i class="fab fa-facebook-f"></i><a href="#"></a></li>
+            <li><i class="fab fa-instagram"></i><a href="#"></a></li>
+            <li><i class="fab fa-twitter"></i><a href="#"></a></li>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <!--Fin del Footer-->
+  </section>
 </body>
 </html>
