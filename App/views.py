@@ -9,3 +9,6 @@ def contact (request):
 
 def aboutUs (request):
     return render(request, 'app/aboutUs.html')
+
+def services (request):
+    return render(request, 'app/services.html')
