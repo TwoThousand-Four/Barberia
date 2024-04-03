@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     {%load static%}
+    <link rel="icon" href="{%static 'img/icons/icon.png'%}">
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
@@ -13,82 +14,72 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dickson's Barber</title>
+    <title>Infinity Barber</title>
 </head>
 <body>
-  <section>
+  {%load static%}
 
-  
-    {%load static%}
-
-    <!-- Encabezado-->
-    <header>
-      <div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="{%url 'home'%}"><img src="{%static 'img/icons/icon.png'%}" alt="" style="height: 60px; width: 60px;"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarScroll">
-              <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="{%url 'home'%}">Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{%url 'aboutUs'%}">Nosotros</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                    <li><a class="dropdown-item" href="#">Corte de pelo</a></li>
-                    <li><a class="dropdown-item" href="#">Perfilado de barba</a></li>
-                    <li><a class="dropdown-item" href="#">Limpieza facial</a></li>
-                    <li><a class="dropdown-item" href="#">Rizos permanentes</a></li>
-                    <li><a class="dropdown-item" href="#">Teñido de pelo</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <!--Fin del encabezado-->
-    {% block content %}
-    <div>
-      <h1>Texto de ejemplo</h1>
+  <!-- Navbar -->
+  <header class="header">
+    <div class="logo">
+        <a href="{%url 'home'%}"><img src="{%static 'img/icons/iconWeb.png'%}" alt="Logo"></a>
     </div>
-    {% endblock content%}
-    <br>
-    <br>
-    <!--Footer-->
-    <footer class="footer2">
-      <div class="container">
-        <div class="footer-rows">
-          <div class="footer-links">
-            <h4>Información</h4>
-            <li><a href="#">Politicas y privacidad</a></li>
-            <li><a href="#">Términos y condiciones</a></li>
-          </div>
-          <hr>
-          <div class="footer-links">
-            <h4>Contacto</h4>
-            <li>+569 29353619</li>
-            <li>correo@gmail.com</li>
-          </div>
-          <hr>
-          <div class="social-links">
-            <h4>Redes sociales</h4>
-            <li><i class="fab fa-facebook-f"></i><a href="#"></a></li>
-            <li><i class="fab fa-instagram"></i><a href="#"></a></li>
-            <li><i class="fab fa-twitter"></i><a href="#"></a></li>
-          </div>
-        </div>
+    <nav>
+       <ul class="nav-links">
+            <li><a href="{%url 'home'%}" class="btn btn-outline-dark btn-sm">Inicio</a></li>
+            <li><a href="{%url 'services'%}"class="btn btn-outline-dark btn-sm">Servicios</a></li>
+            <li><a href="{%url 'aboutUs'%}"class="btn btn-outline-dark btn-sm">Nosotros</a></li>
+            <li><a href="{%url 'contact'%}"class="btn btn-outline-dark btn-sm">Contactanos</a></li>
+       </ul>            
+    </nav>
+    <!--Navbar responsive-->
+    <a onclick="openNav()" class="menu" href="#"><button><img src="{%static 'img/icons/iconMenu.png'%}" alt=""></button></a>
+    <div class="overlay" id="mobile-menu" >
+        <a onclick="closeNav()" href="" class="close">&times;</a>
+        <div class="overlay-content">
+            <a href="{%url 'home'%}">Inicio</a>
+            <a href="#">Servicios</a>
+            <a href="{%url 'aboutUs'%}">Nosotros</a>
+            <a href="{%url 'contact'%}">Contactanos</a>
+       </div>
+    </div>
+  </header>
+  <!--Fin Navbar-->
+  
+  <!--Contenido de cada vista-->
+  {% block content %}
+  
+  {% endblock content%}
+  <!--Fin del contenido-->
+  <br>
+  <!--Footer-->
+  <footer class="footer">
+    <div class="group-1">
+      <div class="box">
+          <figure><a href="{%url 'home'%}"><img src="{%static 'img/icons/iconInfinity.png'%}" alt="Logo"></a></figure>
       </div>
-    </footer>
+      <div class="box">
+        <br>
+          <h2>MÁS INFORMACIÓN</h2>
+          <p>HORARIO DE ATENCIÓN: Lunes a Viernes de 11:00 AM a 17:00 PM.</p>
+          <p>DIRECCIÓN: V Región, Viña del Mar, Avenida Valparaíso 275.</p>
+          <a href="https://www.gmail.com"><img src="{%static 'img/icons/iconGm.png'%}" alt="Correo">  infinitybarber@gmail.com</a>
+      </div>
+      <div class="box">
+        <br>
+          <h2>SÍGUENOS</h2>
+          <div class="red-social">
+              <li><a href="https://www.facebook.com"><img src="{%static 'img/icons/iconFb.png'%}" alt="Icono FB"></a></li>
+              <li><a href="https://www.instagram.com"><img src="{%static 'img/icons/iconIG.png'%}" alt="Icono IG"></a></li>
+              <li><a href="https://www.tiktok.com"><img src="{%static 'img/icons/iconTok.png'%}" alt="Icono TikTok"></a></li>
+              <li><a href="https://www.twitter.com"><img src="{%static 'img/icons/iconX.png'%}" alt="Icono Twitter"></a></li>
+          </div>
+      </div>
+    </div> 
+  </footer>
+  <!--Fin del Footer-->
 
-    <!--Fin del Footer-->
-  </section>
+  <!--Js del menú-->
+  <script type="text/javascript" src="{%static 'js/nav.js'%}"></script>
 </body>
 </html>
