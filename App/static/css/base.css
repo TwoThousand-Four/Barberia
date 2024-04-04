@@ -33,25 +33,6 @@ body{
     margin-right: auto;
 }
 
-.header .logo img{
-    height: 70px;
-    width: auto;
-    transition: all 0.3s;
-}
-
-.header .logo img:hover{
-    transform: scale(1.2);
-}
-
-
-.header .nav-links{
-    list-style: none;
-}
-
-.header .nav-links li{
-    display: inline-block;
-    padding-top: 10px; 
-    height: 40px;
 }
 
 .header .nav-links li:hover,
