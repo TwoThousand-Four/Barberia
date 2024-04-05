@@ -20,7 +20,7 @@ body{
 
 /**Css del header responsive*/
 .header{
-    background-color: #471cbdd2;
+    background-color: #1F1F25;
     display: flex;
     justify-content: flex-end;
     align-items:end;
@@ -33,6 +33,25 @@ body{
     margin-right: auto;
 }
 
+.header .logo img{
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.header .logo img:hover{
+    transform: scale(1.2);
+}
+
+
+.header .nav-links{
+    list-style: none;
+}
+
+.header .nav-links li{
+    display: inline-block;
+    padding-top: 10px; 
+    height: 40px;
 }
 
 .header .nav-links li:hover,
@@ -46,7 +65,7 @@ body{
 }
 
 .header .nav-links a:hover{
-    color: #ffffff;
+    color: #ffbc0e;
 }
 
 /**/.menu {
@@ -57,7 +76,7 @@ body{
 /**/.header .menu button{
     margin-left: 20px;
     font-weight: 700;
-    color: #f5f7f8;
+    color: #1b3039;
     padding: 9px 25px;
     background: #eceff1;
     border: none;
@@ -66,11 +85,13 @@ body{
     transition: all 0.3s ease 0s;
 }
 
+
 /**/.header .menu button:hover{
     background-color: #e2f1f8;
     color: #ffbc0e;
     transform: scale(1.1);
 }
+
 
 /**/@media screen and (max-width: 1092px){
     .nav-links{
@@ -80,6 +101,7 @@ body{
         display: inherit;
     }
 }
+
 /*Nav responsive Mobile*/
 
 .header a{
@@ -93,7 +115,7 @@ body{
     z-index: 1;
     left: 0;
     top: 0;
-    background-color: #909E98;
+    background-color: rgba(33, 49, 63, .95);
     overflow: hidden;
     transition: all 0.3s ease 0s;
 }
@@ -125,6 +147,17 @@ body{
     top: 20px;
     right: 45px;
     font-size: 65px;
+}
+
+@media screen and (max-height:450px) {
+    .header .overlay a{
+        font-size: 20px;
+    }
+    .header .overlay .close{
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
 }
 
 @media screen and (max-height:450px) {
