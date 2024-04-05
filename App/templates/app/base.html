@@ -8,7 +8,7 @@
     {% bootstrap_javascript %}
 
     {%block css%}
-    <link rel="stylesheet" href="{% static '/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"><!--botones-->
     {%endblock css%}
 
@@ -17,69 +17,71 @@
     <title>Infinity Barber</title>
 </head>
 <body>
-  {%load static%}
+    {%load static%}
 
-  <!-- Navbar -->
-  <header class="header">
-    <div class="logo">
+    <!-- Navbar -->
+    <header class="header">
+      <div class="logo">
         <a href="{%url 'home'%}"><img src="{%static 'img/icons/iconWeb.png'%}" alt="Logo"></a>
-    </div>
-    <nav>
-       <ul class="nav-links">
-            <li><a href="{%url 'home'%}" class="btn btn-outline-dark btn-sm">Inicio</a></li>
-            <li><a href="{%url 'services'%}"class="btn btn-outline-dark btn-sm">Servicios</a></li>
-            <li><a href="{%url 'aboutUs'%}"class="btn btn-outline-dark btn-sm">Nosotros</a></li>
-            <li><a href="{%url 'contact'%}"class="btn btn-outline-dark btn-sm">Contactanos</a></li>
-       </ul>            
-    </nav>
-    <!--Navbar responsive-->
-    <a onclick="openNav()" class="menu" href="#"><button><img src="{%static 'img/icons/iconMenu.png'%}" alt=""></button></a>
-    <div class="overlay" id="mobile-menu" >
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="{%url 'home'%}" class="btn btn-outline-dark btn-sm">Inicio</a></li>
+          <li><a href="{%url 'services'%}"class="btn btn-outline-dark btn-sm">Servicios</a></li>
+          <li><a href="{%url 'aboutUs'%}"class="btn btn-outline-dark btn-sm">Nosotros</a></li>
+          <li><a href="{%url 'contact'%}"class="btn btn-outline-dark btn-sm">Contactanos</a></li>
+        </ul>            
+      </nav>
+      <!--Navbar responsive-->
+      <a onclick="openNav()" class="menu" href="#"><button><img src="{%static 'img/icons/iconMenu.png'%}" alt=""></button></a>
+      <div class="overlay" id="mobile-menu" >
         <a onclick="closeNav()" href="" class="close">&times;</a>
         <div class="overlay-content">
-            <a href="{%url 'home'%}">Inicio</a>
-            <a href="{%url 'services'%}">Servicios</a>
-            <a href="{%url 'aboutUs'%}">Nosotros</a>
-            <a href="{%url 'contact'%}">Contactanos</a>
-       </div>
+          <a href="{%url 'home'%}">Inicio</a>
+          <a href="{%url 'services'%}">Servicios</a>
+          <a href="{%url 'aboutUs'%}">Nosotros</a>
+          <a href="{%url 'contact'%}">Contactanos</a>
+        </div>
+      </div>
+    </header>
+    <!--Fin Navbar-->
+    
+    <!--Contenido de cada vista-->
+    <div id="content">
+      {% block content %}
+      
+      {% endblock content%}
     </div>
-  </header>
-  <!--Fin Navbar-->
-  
-  <!--Contenido de cada vista-->
-  {% block content %}
-  
-  {% endblock content%}
-  <!--Fin del contenido-->
-  <br>
-  <!--Footer-->
-  <footer class="footer">
-    <div class="group-1">
-      <div class="box">
-          <figure><a href="{%url 'home'%}"><img src="{%static 'img/icons/iconInfinity.png'%}" alt="Logo"></a></figure>
-      </div>
-      <div class="box">
-        <br>
-          <h2>MÁS INFORMACIÓN</h2>
-          <p>HORARIO DE ATENCIÓN: Lunes a Viernes de 11:00 AM a 17:00 PM.</p>
-          <p>DIRECCIÓN: V Región, Viña del Mar, Avenida Valparaíso 275.</p>
-          <a href="https://www.gmail.com"><img src="{%static 'img/icons/iconGm.png'%}" alt="Correo">  infinitybarber@gmail.com</a>
-      </div>
-      <div class="box">
-        <br>
-          <h2>SÍGUENOS</h2>
-          <div class="red-social">
-              <li><a href="https://www.facebook.com"><img src="{%static 'img/icons/iconFb.png'%}" alt="Icono FB"></a></li>
-              <li><a href="https://www.instagram.com"><img src="{%static 'img/icons/iconIG.png'%}" alt="Icono IG"></a></li>
-              <li><a href="https://www.tiktok.com"><img src="{%static 'img/icons/iconTok.png'%}" alt="Icono TikTok"></a></li>
-              <li><a href="https://www.twitter.com"><img src="{%static 'img/icons/iconX.png'%}" alt="Icono Twitter"></a></li>
-          </div>
-      </div>
-    </div> 
-  </footer>
-  <!--Fin del Footer-->
+    <!--Fin del contenido-->
+    <br>
+    <!--Footer-->
+    <footer class="footer">
+      <div class="group-1">
+        <div class="box">
+            <figure><a href="{%url 'home'%}"><img src="{%static 'img/icons/iconInfinity.png'%}" alt="Logo"></a></figure>
+        </div>
+        <div class="box">
+          <br>
+            <h2>MÁS INFORMACIÓN</h2>
+            <p>HORARIO DE ATENCIÓN: Lunes a Viernes de 11:00 AM a 17:00 PM.</p>
+            <p>DIRECCIÓN: V Región, Viña del Mar, Avenida Valparaíso 275.</p>
+            <a href="https://www.gmail.com"><img src="{%static 'img/icons/iconGm.png'%}" alt="Correo">  infinitybarber@gmail.com</a>
+        </div>
+        <div class="box">
+          <br>
+            <h2>SÍGUENOS</h2>
+            <div class="red-social">
+                <li><a href="https://www.facebook.com"><img src="{%static 'img/icons/iconFb.png'%}" alt="Icono FB"></a></li>
+                <li><a href="https://www.instagram.com"><img src="{%static 'img/icons/iconIG.png'%}" alt="Icono IG"></a></li>
+                <li><a href="https://www.tiktok.com"><img src="{%static 'img/icons/iconTok.png'%}" alt="Icono TikTok"></a></li>
+                <li><a href="https://www.twitter.com"><img src="{%static 'img/icons/iconX.png'%}" alt="Icono Twitter"></a></li>
+            </div>
+        </div>
+      </div> 
+    </footer>
+    <!--Fin del Footer-->
 
-  <!--Js del menú-->
-  <script type="text/javascript" src="{%static 'js/nav.js'%}"></script>
+    <!--Js del menú-->
+    <script type="text/javascript" src="{%static 'js/nav.js'%}"></script>
 </body>
 </html>
