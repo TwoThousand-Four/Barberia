@@ -12,3 +12,6 @@ def aboutUs (request):
 
 def services (request):
     return render(request, 'app/services.html')
+
+def cart (request):
+    return render(request, 'app/cart.html')

@@ -1,8 +1,45 @@
 
+body{
+    font-family: sans-serif;
+    margin: 0%;
+}
+
+a{
+    text-decoration: none; /*esto es para sacarle la decoración*/
+    color: gray;
+}
 header{
     display: flex;
+    height: 70px, 70px;
+    background-color: #cfcfcf;
+    justify-content: space-between;/*para darle espacio entre los div*/
+    align-items: center;
+    box-shadow: 10px, 10px, 15px;
 }
+
 
 .logo{
     display: flex;
+    padding: 10px;
+    align-items: center;/*alinear en el centro*/
+}
+
+.logo img{
+    height: 60px;
+    padding: 10px;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.portada .imagen-portada{
+    height: 540px;
+    padding: 40px;
+}
+
+.vista-bajo-header{
+    display: flex;
+}
+
+.vista-bajo-header img{
+    padding: 40px;
 }
