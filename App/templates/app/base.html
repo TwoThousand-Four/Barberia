@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    {%load static%}
-    <link rel="icon" href="{%static 'img/icons/icon.png'%}">
+    {%load static%}<!--carga la carpeta static-->
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
@@ -15,6 +14,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infinity Barber</title>
+    <link rel="icon" href="{%static 'img/icons/icon.png'%}"> <!--imagen de la pestaña de ventana-->
 </head>
 <body>
     {%load static%}
@@ -30,6 +30,7 @@
           <li><a href="{%url 'services'%}"class="btn btn-outline-dark btn-sm">Servicios</a></li>
           <li><a href="{%url 'aboutUs'%}"class="btn btn-outline-dark btn-sm">Nosotros</a></li>
           <li><a href="{%url 'contact'%}"class="btn btn-outline-dark btn-sm">Contactanos</a></li>
+          <li><a href="{%url 'cart'%}"class="btn btn-outline-dark btn-sm">Carrito</a></li>
         </ul>            
       </nav>
       <!--Navbar responsive-->
@@ -41,6 +42,7 @@
           <a href="{%url 'services'%}">Servicios</a>
           <a href="{%url 'aboutUs'%}">Nosotros</a>
           <a href="{%url 'contact'%}">Contactanos</a>
+          <a href="{%url 'cart'%}">Carrito</a>
         </div>
       </div>
     </header>
@@ -64,7 +66,7 @@
           <br>
             <h2>MÁS INFORMACIÓN</h2>
             <p>HORARIO DE ATENCIÓN: Lunes a Viernes de 11:00 AM a 17:00 PM.</p>
-            <p>DIRECCIÓN: V Región, Viña del Mar, Avenida Valparaíso 275.</p>
+            <p>DIRECCIÓN: V Región, Viña del Mar, Juan Hamilton 32.</p>
             <a href="https://www.gmail.com"><img src="{%static 'img/icons/iconGm.png'%}" alt="Correo">  infinitybarber@gmail.com</a>
         </div>
         <div class="box">
