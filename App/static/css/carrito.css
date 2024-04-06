@@ -1,7 +1,23 @@
 
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family:'Merriweather', sans-serif;
+    font-size : 20px;
+
+}
+
+
 body{
-    font-family: sans-serif;
-    margin: 0%;
+    min-width: 400px;
+    display: grid; /*para que no se vaya deformando a medida que vaya bajando */
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 a{
