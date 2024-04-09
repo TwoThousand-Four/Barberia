@@ -36,11 +36,11 @@ body{
 .header .logo img{
     height: 70px;
     width: auto;
-    transition: all 0.3s;
+    transition: all 0.3s;/*el tiempo de efecto que se demora en volver*/
 }
 
 .header .logo img:hover{
-    transform: scale(1.2);
+    transform: scale(1.2);/*cuanto quieres que se agrande al momento de pasar el mouse por encima*/
 }
 
 
@@ -55,7 +55,7 @@ body{
 }
 
 .header .nav-links li:hover,
-/**/.overlay a:hover{
+/**/.overlay a:hover{/*para que al pasar el mouse por encima sobresalga la imagen */
     transform: scale(1.1);
 }
 
