@@ -41,7 +41,7 @@ header{
     align-items: center;/*alinear en el centro*/
 }
 
-.logo .nombre-logo{
+.logo .logo-name{
     color: white;
 }
 
@@ -52,17 +52,17 @@ header{
     margin-right: 10px;
 }
 
-.portada .imagenportada{
+.fpage .img-fpage{
     height: 540px;
     padding: 40px;
     border-radius: 90px;
 }
 
-.imagen-bajo-header{
+.img-low{
     display: flex;
 }
 
-.imagen-bajo-header .imagenmapa{
+.img-low .map-img{
     padding: 40px;
     height: 540px;
     border-radius: 90px;
