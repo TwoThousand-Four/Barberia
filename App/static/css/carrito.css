@@ -69,8 +69,10 @@ header{
     display: flex;
 }
 
+/*Imagen del mapa*/
 .img-low .map-img{
     padding: 40px;
     height: 540px;
     border-radius: 90px;
 }
+
