@@ -55,7 +55,11 @@ header{
     margin-right: 10px;
 }
 
-.portada .imagenportada{
+<<<<<<<<< Temporary merge branch 1
+.fpage .img-fpage{
+=========
+.imagenportada{
+>>>>>>>>> Temporary merge branch 2
     height: 540px;
     padding: 40px;
     border-radius: 90px;
