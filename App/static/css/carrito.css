@@ -23,7 +23,7 @@ body{
 
 a{
     text-decoration: none; /*esto es para sacarle la decoración*/
-    color: gray;
+    color: white; /*letra de botón iniciar sesión */
 }
 header{
     display: flex;
@@ -34,6 +34,9 @@ header{
     box-shadow: 10px, 10px, 15px;
 }
 
+.inicio-sesion .boton-inicio{
+    color: white;
+}
 
 .logo{
     display: flex;
@@ -52,7 +55,11 @@ header{
     margin-right: 10px;
 }
 
+
 .fpage .img-fpage{
+=======
+.imagenportada{
+
     height: 540px;
     padding: 40px;
     border-radius: 90px;
