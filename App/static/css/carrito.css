@@ -55,14 +55,19 @@ header{
     margin-right: 10px;
 }
 
-<<<<<<<<< Temporary merge branch 1
+
 .fpage .img-fpage{
-=========
-.imagenportada{
->>>>>>>>> Temporary merge branch 2
+
     height: 540px;
     padding: 40px;
     border-radius: 90px;
+}
+
+.f-mapa .img-mapa{
+    padding: 40px;
+    height: 540px;
+    border-radius: 90px;
+
 }
 
 .img-low{
@@ -71,6 +76,22 @@ header{
 
 .img-low .map-img{
     padding: 40px;
-    height: 540px;
+    height: 540px;  
     border-radius: 90px;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Para centrar verticalmente */
+    flex-wrap: wrap; /* Para que los elementos se ajusten si no caben en una sola fila */
+    padding: 20px; /* Añade algo de espacio alrededor de los elementos */
+}
+
+
+
+.contenedor > div{
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.75);
+    background-color: #2d4263;
+    border-radius: 20px;
 }
