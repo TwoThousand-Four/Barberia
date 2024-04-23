@@ -5,20 +5,22 @@
     padding: 0;
     font-family:'Merriweather', sans-serif;
     font-size : 20px;
+    max-width: 100%;
+
 
 }
 
 
 body{
-    min-width: 400px;
+    min-width: 50%;
     display: grid; /*para que no se vaya deformando a medida que vaya bajando */
-    min-height: 100vh;
+    min-height: 100%;
     grid-template-rows: auto 1fr auto;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-color: #94b8d7;
+    background-color: white;
 }
 
 a{
@@ -28,7 +30,7 @@ a{
 header{
     display: flex;
     height: 70px, 70px;
-    background-color: #557996;
+    background-color: black;
     justify-content: space-between;/*para darle espacio entre los div*/
     align-items: center;
     box-shadow: 10px, 10px, 15px;
@@ -55,20 +57,29 @@ header{
     margin-right: 10px;
 }
 
+.img-low{
+    justify-content: space-between;
+}
+
 
 .fpage .img-fpage{
+    max-height: 100%;
 
-    height: 540px;
+    height:450px ;
     padding: 40px;
     border-radius: 90px;
+    object-fit: contain;
 }
 
 .f-mapa .img-mapa{
     padding: 40px;
-    height: 540px;
+    height: 450px;
     border-radius: 90px;
+    object-fit: contain;
 
 }
+
+
 
 .img-low{
     display: flex;
@@ -78,20 +89,81 @@ header{
     padding: 40px;
     height: 540px;  
     border-radius: 90px;
+    object-fit: contain;
 }
 
-.contenedor {
-    display: flex;
+.contenedor{
+ 
+    width: 100%;
+
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center; /* Para centrar verticalmente */
-    flex-wrap: wrap; /* Para que los elementos se ajusten si no caben en una sola fila */
-    padding: 20px; /* Añade algo de espacio alrededor de los elementos */
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  
 }
 
+.card{
+    height: auto    ;
+    width: 300px;
+    margin: 20px;
+    overflow: hidden; /*para que todo lo que salga de la card se oculte*/
+    background-color: #557996;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2) ;
+    cursor: default; /*para que se pueda ver siempre el cursor al pasarlo por encima de las letras*/
+    transition: all 400ms ease;
+    align-self: stretch !important;
+  
+}
 
+.card:hover{
+    box-shadow:5px 5px 20px rgba(0, 0, 0, 0.2) ;
+    transform: translateY(-3%);
+    border: 2px solid white
+}
 
-.contenedor > div{
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.75);
-    background-color: #2d4263;
-    border-radius: 20px;
+.card .icono .card-img{
+    padding: 60px;
+    filter: invert(100%);
+    justify-content: center;
+   
+}
+
+.card .card-body{
+    padding: 15px;
+    text-align: center;
+    
+}
+
+.card-body p{
+    line-height: 1.5;
+    color: blanchedalmond;
+}
+
+.card .card-body h3{
+    font-weight: 400;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.btn{
+    transition: none;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    color: wheat;
+    border: 1px;
+}
+
+@media only screen and (min-width:320px) and (max-width:768px){
+    .contenedor{
+        flex-wrap: wrap;
+    }
+    .card{
+        margin: 15px;
+    }
 }
