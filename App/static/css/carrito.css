@@ -27,7 +27,8 @@ a{
     text-decoration: none; /*esto es para sacarle la decoración*/
     color: white; /*letra de botón iniciar sesión */
 }
-header{
+.header{
+    background-color: black;
     display: flex;
     height: 70px, 70px;
     background-color: black;
@@ -53,41 +54,6 @@ header{
     margin-right: 10px;
 }
 
-.img-low{
-    justify-content: space-between;
-
-
-
-
-    height: 540px;
-
-    padding: 40px;
-    border-radius: 90px;
-    object-fit: contain;
-}
-
-.f-mapa .img-mapa{
-    padding: 40px;
-    height: 450px;
-    border-radius: 90px;
-    object-fit: contain;
-
-}
-
-
-
-.img-low{
-    display: flex;
-}
-
-/*Imagen del mapa*/
-.img-low .map-img{
-    padding: 40px;
-    height: 540px;  
-    border-radius: 90px;
-
-    object-fit: contain;
-}
 
 .contenedor{
  
@@ -124,7 +90,7 @@ header{
 
 .card .icono .card-img{
     padding: 60px;
-    filter: invert(100%);
+    filter: invert(50%);
     justify-content: center;
    
 }
