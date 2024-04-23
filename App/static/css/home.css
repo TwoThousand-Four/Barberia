@@ -1,0 +1,27 @@
+body{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container{
+    padding: 50px;
+}
+.card{
+    width: 100%;
+    display: block;
+    opacity: 90%;
+    background: #c5c5c5;
+    box-shadow: 7px 13px 37px #2a2a2a;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.card .card-body .card-title{
+    text-align: center;
+    font-size: 30px;
+}
