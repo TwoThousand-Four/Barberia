@@ -7,9 +7,6 @@ def home (request):
 def contact (request):
     return render(request, 'app/contact.html')
 
-def aboutUs (request):
-    return render(request, 'app/aboutUs.html')
-
 def services (request):
     return render(request, 'app/services.html')
 
