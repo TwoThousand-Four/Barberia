@@ -36,10 +36,6 @@ header{
     box-shadow: 10px, 10px, 15px;
 }
 
-.inicio-sesion .boton-inicio{
-    color: white;
-}
-
 .logo{
     display: flex;
     padding: 10px;
@@ -59,13 +55,12 @@ header{
 
 .img-low{
     justify-content: space-between;
-}
 
 
-.fpage .img-fpage{
-    max-height: 100%;
 
-    height:450px ;
+
+    height: 540px;
+
     padding: 40px;
     border-radius: 90px;
     object-fit: contain;
@@ -85,10 +80,12 @@ header{
     display: flex;
 }
 
+/*Imagen del mapa*/
 .img-low .map-img{
     padding: 40px;
     height: 540px;  
     border-radius: 90px;
+
     object-fit: contain;
 }
 
@@ -167,3 +164,7 @@ header{
         margin: 15px;
     }
 }
+
+
+
+

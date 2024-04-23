@@ -1,7 +1,45 @@
 {% extends 'app/base.html' %}
 {%load static%}
-
+{%block css%}
+<link rel="stylesheet" href="{%static 'css/home.css'%}">
+<link rel="stylesheet" href="{%static 'css/base.css'%}">
+{%endblock css%}
 <!--Contenido de la vista principal-->
 {%block content%}
-<h1>hola</h1>
+    {%load static%}
+    <br>
+      <div class="container">
+          <!-- Carousel -->
+          <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            </div>
+
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{%static 'img/icons/carousel/carousel1.png'%}" alt="Imagen 1" class="d-block w-100">
+              </div>
+              <div class="carousel-item">
+                <img src="{%static 'img/icons/carousel/carousel2.png'%}" alt="Imagen 2" class="d-block w-100">
+              </div>
+              <div class="carousel-item">
+                <img src="{%static 'img/icons/carousel/carousel3.png'%}" alt="Imagen 3" class="d-block w-100">
+              </div>
+            </div>
+
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+      </div>
+    <br>
 {%endblock content%}
