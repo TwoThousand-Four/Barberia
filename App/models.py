@@ -2,20 +2,9 @@ from django.db import models
 
 # Create your models here.
 
-#Clase Tipo Servicio
-class TipoServicio(models.Model):
-    tipo = models.CharField(max_length=50, verbose_name="Tipo de Servicio")
-    descripcion = models.CharField(max_length=50, verbose_name="Descripción")
-    precio = models.IntegerField(verbose_name="Precio")
-    
-    def __str__(self):
-        return self.tipo
-
-
 #Clase Servicio
 class Servicio(models.Model):
     nombre = models.CharField(max_length=50, verbose_name="Nombre")
-    tipo = models.ForeignKey(TipoServicio, on_delete=models.PROTECT, verbose_name="Tipo de Servicio")
     descripcion = models.CharField(max_length=50, verbose_name="Descripción")
     imagen = models.ImageField(upload_to='static/img/servicios', verbose_name="Imagen del servicio", null=True)
     precio =  models.IntegerField(verbose_name="Precio")
