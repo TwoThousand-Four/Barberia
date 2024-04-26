@@ -27,7 +27,7 @@ class RegisterForm(UserCreationForm):
         username =self.cleaned_data["nombre"]
         existe = User.objects.filter(username=username).exists()
         if existe:
-            raise ValidationError("Ya existe un producto con ese nombre")
+            raise ValidationError("Ya existe un usuario con ese nombre")
         return username
     
     class Meta:
