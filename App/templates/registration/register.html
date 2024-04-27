@@ -1,0 +1,31 @@
+{% extends 'app/base.html' %}
+
+{%load static%}
+{%block css%}
+<link rel="stylesheet" href="{%static 'css/base.css'%}">
+<link rel="stylesheet" href="{%static 'css/register.css'%}">
+{%endblock css%}
+
+{%block content%}
+{%load static%}
+{%load crispy_forms_tags%}
+<br>
+<div class="container">
+    <div class="col-12 col-md-6 offset-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h2>Registrate</h2>
+                <hr>
+                <form action="" method="post">
+                    {%csrf_token%}
+                    {{form|crispy}}
+                    <a href="{%url 'home'%}">Volver al inicio</a> |
+                    <a href="{%url 'login'%}">Iniciar Sesión</a>
+                    <input type="submit" value="Registrar" class="btn btn-success float-right">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+{%endblock content%}
