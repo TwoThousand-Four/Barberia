@@ -9,32 +9,32 @@
 {%load crispy_forms_tags%}
 {%load static%}
 <br>
-    <div class="container contact">
-        <div class="apartado">
-            <h1>Contactate con Infinity Barber</h1>
-            <p>En este apartado puedes rellenar el formulario para enviarnos cualquier duda o consulta que tengas y nosostros te responderemos lo antes posible 😉.</p>
+<div class="container contact">
+    <div class="apartado">
+        <h1>Contactate con Infinity Barber</h1>
+        <p>En este apartado puedes rellenar el formulario para enviarnos cualquier duda o consulta que tengas y nosostros te responderemos lo antes posible 😉.</p>
+    </div>
+</div>
+<br>
+<div class="col-8 col-md-6 offset-md-3">
+    <div class="card">
+        <br>
+        <h2 class="d-flex justify-content-center">CONTÁCTANOS</h2>
+        <br>
+        <div class="card-body">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form | crispy}}
+                <br>
+                <div class="d-flex justify-content-end">
+                    <button type="reset" value="Cancelar" class="btn btn-secondary">Cancelar</button>
+                    &nbsp;
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+            {{mensaje}}
         </div>
     </div>
-    <br>
-        <div class="col-8 col-md-6 offset-md-3">
-            <div class="card">
-                <br>
-                <h2 class="d-flex justify-content-center">CONTÁCTANOS</h2>
-                <br>
-                <div class="card-body">
-                    <form action="" method="POST">
-                        {% csrf_token %}
-                        {{ form | crispy}}
-                        <br>
-                        <div class="d-flex justify-content-end">
-                            <button type="reset" value="Cancelar" class="btn btn-secondary">Cancelar</button>
-                            &nbsp;
-                            <button type="submit" class="btn btn-primary">Enviar</button>
-                        </div>
-                    </form>
-                    {{mensaje}}
-                </div>
-            </div>
-        </div>
+</div>
 <br>
 {%endblock content%}
