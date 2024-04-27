@@ -29,7 +29,7 @@
           <li><a href="{%url 'home'%}" class="btn btn-outline-dark btn-sm">Inicio</a></li>
           <li><a href="{%url 'services'%}"class="btn btn-outline-dark btn-sm">Servicios</a></li>
           <li><a href="{%url 'contact'%}"class="btn btn-outline-dark btn-sm">Contactanos</a></li>
-          <li><a href="{%url 'cart'%}"class="btn btn-outline-dark btn-sm">Carrito</a></li>
+          <li><a href="{%url 'cart'%}"class="btn btn-outline-dark btn-sm">Agendar</a></li>
 
           {%if user.is_authenticated%}
           <li><a href="{%url 'logout'%}">Cerrar sesión</a></li> |
@@ -47,7 +47,7 @@
           <a href="{%url 'home'%}">Inicio</a>
           <a href="{%url 'services'%}">Servicios</a>
           <a href="{%url 'contact'%}">Contactanos</a>
-          <a href="{%url 'cart'%}">Carrito</a>
+          <a href="{%url 'cart'%}">Agendar</a>
 
           {%if user.is_authenticated%}
           <a href="{%url 'logout'%}">Cerrar sesión</a>
