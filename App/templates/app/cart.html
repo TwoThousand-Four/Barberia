@@ -83,8 +83,71 @@
 </body>
 
 <style>
+    header{
+        background-color: black;
+
+    }
+
+    .contenedor{
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    body{
+    min-width: 50%;
+    display: grid; /*para que no se vaya deformando a medida que vaya bajando */
+    min-height: 100%;
+    grid-template-rows: auto 1fr auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: white;
     
+    }
+
+    .card{
+
+    width: 50%; /* Ancho inicial de la tarjeta */
+    max-width: 250px; /* Ancho máximo de la tarjeta */
+    overflow: hidden; /*para que todo lo que salga de la card se oculte*/
+    background-color: white;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2) ;
+    cursor: default; /*para que se pueda ver siempre el cursor al pasarlo por encima de las letras*/
+    transition: all 0.5s ease;
+    align-self: stretch !important;
+  
+}
+
+.card p  {
+    color: rgb(115, 103, 103);
+}
+
+.card .card-body h3{
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+.card .icono .card-img{
+    padding: 60px;
+    filter: invert(50%);
+    justify-content: center;
    
+}
+
+.card:hover{
+    background-color: rgb(217, 187, 143);
+}
 
 </style>
 

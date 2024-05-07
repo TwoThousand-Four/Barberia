@@ -72,7 +72,7 @@ a{
 .card{
     height: auto    ;
     width: 300px;
-    margin: 20px;
+   
     overflow: hidden; /*para que todo lo que salga de la card se oculte*/
     background-color: #557996;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2) ;
@@ -85,7 +85,7 @@ a{
 .card:hover{
     box-shadow:5px 5px 20px rgba(0, 0, 0, 0.2) ;
     transform: translateY(-3%);
-    border: 2px solid white
+    border: 2px solid rgb(147, 113, 55)
 }
 
 .card .icono .card-img{
