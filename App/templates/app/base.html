@@ -30,6 +30,13 @@
           <li><a href="{%url 'services'%}"class="btn btn-outline-dark btn-sm">Servicios</a></li>
           <li><a href="{%url 'contact'%}"class="btn btn-outline-dark btn-sm">Contactanos</a></li>
           <li><a href="{%url 'cart'%}"class="btn btn-outline-dark btn-sm">Agendar</a></li>
+
+          {%if user.is_authenticated%}
+          <li><a href="{%url 'logout'%}">Cerrar sesión</a></li> |
+          <li ><a href="#" >@{{user.username}}</a></li>
+          {%else%}
+          <li><a href="{%url 'login'%}">Iniciar sesión</a></li>
+          {%endif%}
         </ul>            
       </nav>
       <!--Navbar responsive-->
@@ -40,7 +47,13 @@
           <a href="{%url 'home'%}">Inicio</a>
           <a href="{%url 'services'%}">Servicios</a>
           <a href="{%url 'contact'%}">Contactanos</a>
-          <a href="{%url 'cart'%}">Carrito</a>
+          <a href="{%url 'cart'%}">Agendar</a>
+
+          {%if user.is_authenticated%}
+          <a href="{%url 'logout'%}">Cerrar sesión</a>
+          {%else%}
+          <a href="{%url 'login'%}">Iniciar sesión</a>
+          {%endif%}
         </div>
       </div>
     </header>
@@ -83,5 +96,9 @@
 
     <!--Js del menú-->
     <script type="text/javascript" src="{%static 'js/nav.js'%}"></script>
+
+    <!--Js de la validación del registro-->
+    <script src="{%static 'js/valRegister.js'%}"></script>
+
 </body>
 </html>
