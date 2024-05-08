@@ -1,1 +1,25 @@
 {% extends 'app/base.html' %}
+{%load static%}
+
+{%block css%}
+<link rel="stylesheet" href="{%static 'css/base.css'%}">
+<link rel="stylesheet" href="{%static 'css/services.css'%}">
+{%endblock css%}
+
+{%block content%}
+{%load static%}
+<div class="container">
+    {% for servicio in servicios %}
+    <div class="card">
+        <figure>
+            <img src="{{ servicio.imagen.url }}">
+        </figure>
+        <div class="contenido-card">
+            <h1>{{ servicio.nombre}}</h1>
+            <p>{{ servicio.descripcion }}</p>
+            <p>${{ servicio.precio}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{%endblock content%}

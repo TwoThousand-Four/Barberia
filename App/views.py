@@ -18,7 +18,8 @@ def contact (request):
 
 #Servicios
 def services (request):
-    return render(request, 'app/services.html')
+    servicios = Servicio.objects.all()
+    return render(request, 'app/services.html', {'servicios':servicios})
 
 #Carrito
 def cart (request):
@@ -104,7 +105,7 @@ def modify(request, id):
         if formulario.is_valid():
             formulario.save()
             messages.success(request, "Servicio modficado correctamente")
-            return redirect(to="Listar")
+            return redirect(to="list")
         else:
             data['form'] = formulario
     return render(request, 'app/crud/modify.html', data)
