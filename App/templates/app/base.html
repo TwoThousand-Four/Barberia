@@ -31,8 +31,16 @@
           <li><a href="{%url 'contact'%}"class="btn btn-outline-dark btn-sm">Contactanos</a></li>
           <li><a href="{%url 'cart'%}"class="btn btn-outline-dark btn-sm">Agendar</a></li>
 
+          {%if perms.app.add_servicio%}
+            <li><a href="{%url 'add'%}"class="btn btn-outline-dark btn-sm">Agregar</a></li>
+          {%endif%}
+
+          {%if perms.app.view_servicio%}
+            <li><a href="{%url 'list'%}"class="btn btn-outline-dark btn-sm">Listar</a></li>
+          {%endif%}
+
           {%if user.is_authenticated%}
-          <li><a href="{%url 'logout'%}">Cerrar sesión</a></li> |
+          <li><a href="{%url 'logout'%}" class="btn btn-outline-dark btn-sm">Cerrar sesión</a></li> |
           <li ><a href="#" >@{{user.username}}</a></li>
           {%else%}
           <li><a href="{%url 'login'%}">Iniciar sesión</a></li>
@@ -48,6 +56,14 @@
           <a href="{%url 'services'%}">Servicios</a>
           <a href="{%url 'contact'%}">Contactanos</a>
           <a href="{%url 'cart'%}">Agendar</a>
+          
+          {%if perms.app.add_servicio%}
+            <a href="{%url 'add'%}">Agregar</a>
+          {%endif%}
+
+          {%if perms.app.view_servicio%}
+            <a href="{%url 'list'%}">Listar</a>
+          {%endif%}
 
           {%if user.is_authenticated%}
           <a href="{%url 'logout'%}">Cerrar sesión</a>
@@ -94,6 +110,19 @@
     </footer>
     <!--Fin del Footer-->
 
+    <!--Scripts de mensajes-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {%if messages%}
+        {%for m in messages%}
+            <script>
+                Swal.fire({
+                "title": "Felicidades",
+                "text": "{{m}}",
+                "icon": "success"
+            })
+            </script>
+        {%endfor%}
+    {%endif%}
     <!--Js del menú-->
     <script type="text/javascript" src="{%static 'js/nav.js'%}"></script>
 

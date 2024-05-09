@@ -88,6 +88,10 @@ a{
     border: 2px solid rgb(147, 113, 55)
 }
 
+.btn btn-outline-dark btn-sm{
+    margin-right: 10px;
+}
+
 .card .icono .card-img{
     padding: 60px;
     filter: invert(50%);
