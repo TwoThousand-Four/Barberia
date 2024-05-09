@@ -17,10 +17,11 @@
         <div class="logo">   
             <a href="{%url 'home'%}"><img class="img-fluid" src="{%static 'img/icons/iconInfinity.png'%}" alt="Icono" height="230px"></a>         
             <a href="" class="links" type="text"><h2 class="logo-name">Infinity Barber</h2></a>    
+            <div class="login">
+                <a href="#" class="btn btn-outline-dark btn-sm" >Inciar sesión</a>
+            </div>
         </div>
-        <div class="login">
-            <a href="#" class="btn btn-outline-dark btn-sm" >Inciar sesión</a>
-        </div>
+        
     </header>
 
     <div class="contenedor">
@@ -71,8 +72,12 @@
                 </div>
                 <a href="#" class="btn" id="btn-agendar">Agendar</a>
             </div>
-
+            
     </div>
+
+    <h2 class="instrucciones">Para poder agendar una hora, deberas seleccionar la disponibilidad en el
+        calendario que se mostrará en pantalla. 
+    </h2>
 
 
    
@@ -83,9 +88,13 @@
 </body>
 
 <style>
-    header{
-        background-color: black;
 
+    .logo{
+        justify-content: space-around;
+    }
+    header{
+        background-color: rgb(63, 59, 59);
+        display: grid;
     }
 
     .contenedor{
@@ -94,6 +103,9 @@
         padding-left: 15px;
         margin-right: auto;
         margin-left: auto;
+        flex-wrap: nowrap;
+        margin-top: 100px;
+        justify-content: space-between;
     }
 
     body{
@@ -105,14 +117,13 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-color: white;
+    background-color: rgb(34, 32, 32);
     
     }
 
     .card{
-
-    width: 50%; /* Ancho inicial de la tarjeta */
-    max-width: 250px; /* Ancho máximo de la tarjeta */
+    max-height: 590px;
+    max-width: 290px; /* Ancho máximo de la tarjeta */
     overflow: hidden; /*para que todo lo que salga de la card se oculte*/
     background-color: white;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2) ;
@@ -124,7 +135,9 @@
 
 .card p  {
     color: rgb(115, 103, 103);
-}
+    font-size: 15px;
+
+    }
 
 .card .card-body h3{
     color: black;
@@ -139,7 +152,7 @@
 }
 
 .card .icono .card-img{
-    padding: 60px;
+    padding: 25px;
     filter: invert(50%);
     justify-content: center;
    
@@ -149,6 +162,27 @@
     background-color: rgb(217, 187, 143);
 }
 
+.btn{
+    background-color: rgb(41, 43, 43);
+    margin: 10px;
+}
+
+.btn btn-outline-dark btn-sm{
+    background-color: white;
+}
+
+.instrucciones{
+    margin-top: 100px;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+
+}
+.insrucciones h2{
+    color: white;
+    align-items: center;
+}
 </style>
 
 </html>
