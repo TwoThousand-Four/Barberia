@@ -1,24 +1,5 @@
 {%extends 'app/base.html'%}
-{%block js%}
-<script>
-    function delete_service(id){
-        Swal.fire({
-            "title": "¿Estás seguro?",
-            "text": "Esta accion no se puede deshacer",
-            "icon": "question",
-            "showCancelButton":true,
-            "cancelButtonText":"No, cancelar",
-            "confirmButtonText":"Sí, eliminar",
-            "reverseButtons":true,
-            "confirmButtonColor": '#EA0909'
-        }).then(function(result){
-            if(result.isConfirmed){
-                window.location.href="/eliminar/"+id+"/"
-            }
-        })
-    }
-</script>
-{%endblock js%}
+
 {%load static%}
 {%block css%}
 <link rel="stylesheet" href="{%static 'css/base.css'%}">
@@ -52,7 +33,7 @@
                                 <a href="{%url 'modify' s.id%}" class="btn btn-info btn-sm">Modificar</a>
                             {%endif%}
                             {%if perms.app.delete_servicio%}
-                                <a href="{%url 'delete' s.id%}" onclick="delete_service({{s.id}})" class="btn btn-danger btn-sm">Eliminar</a>
+                                <a href="#" onclick="delete_service({{s.id}})" class="btn btn-danger btn-sm">Eliminar</a>
                             {%endif%}
                         </td>
                     </tr>
