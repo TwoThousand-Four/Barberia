@@ -21,9 +21,22 @@ def services (request):
     servicios = Servicio.objects.all()
     return render(request, 'app/services.html', {'servicios':servicios})
 
-#Carrito
-def cart (request):
-    return render(request, 'app/cart.html')
+#Reserva
+def reserve (request):
+    servicios = Servicio.objects.all()
+    page = request.GET.get('page', 1)
+    
+    try:
+        paginator = Paginator(servicios, 5)
+        servicios = paginator.page(page)
+    except:
+        raise Http404
+    
+    data={
+        'entity':servicios,
+        'paginator':paginator
+    }
+    return render(request, 'app/reserve.html', data)
 
 #Registro
 def register(request):
