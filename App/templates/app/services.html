@@ -11,15 +11,18 @@
 <div class="container">
     {% for servicio in servicios %}
     <div class="card">
-        <figure>
-            <img src="{{ servicio.imagen.url }}">
-        </figure>
+        
         <div class="contenido-card">
+            <figure>
+                <img src="{{ servicio.imagen.url }}">
+            </figure>
             <h1>{{ servicio.nombre}}</h1>
             <p>{{ servicio.descripcion }}</p>
             <p>${{ servicio.precio}}</p>
         </div>
     </div>
     {% endfor %}
+    <h2 class="instrucciones">Para poder agendar una hora, deberas seleccionar la disponibilidad en el
+        calendario que se mostrará en pantalla. 
 </div>
 {%endblock content%}
