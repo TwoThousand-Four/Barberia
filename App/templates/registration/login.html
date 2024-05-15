@@ -1,6 +1,10 @@
 {% extends 'app/base.html' %}
 {%load static%}
 
+{%block css%}
+<link rel="stylesheet" href="{%static 'css/base.css'%}">
+<link rel="stylesheet" href="{%static 'css/register.css'%}">
+{%endblock css%}
 
 {%block content%}
 {%load crispy_forms_tags%}
