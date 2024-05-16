@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home, contact, services, cart, logIn, register, add, list, modify, delete
+from .views import home, contact, services, reserve, logIn, register, add, list, modify, delete
 
 #Para subir imagenes 
 from django.conf import settings
@@ -9,7 +9,7 @@ urlpatterns = [
     path('', home, name='home'),
     path('contacto/', contact, name='contact'),
     path('servicios/', services, name='services'),
-    path('agendar/', cart, name='cart'),
+    path('agendar/', reserve, name='reserve'),
     path('login/', logIn, name='login'),
     path('registro/', register, name='register'),
     path('agregar/', add, name="add"),   

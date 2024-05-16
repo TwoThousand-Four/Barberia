@@ -29,7 +29,7 @@
           <li><a href="{%url 'home'%}" class="btn btn-outline-dark btn-sm">Inicio</a></li>
           <li><a href="{%url 'services'%}"class="btn btn-outline-dark btn-sm">Servicios</a></li>
           <li><a href="{%url 'contact'%}"class="btn btn-outline-dark btn-sm">Contactanos</a></li>
-          <li><a href="{%url 'cart'%}"class="btn btn-outline-dark btn-sm">Agendar</a></li>
+          <li><a href="{%url 'reserve'%}"class="btn btn-outline-dark btn-sm">Agendar</a></li>
 
           {%if perms.app.add_servicio%}
             <li><a href="{%url 'add'%}"class="btn btn-outline-dark btn-sm">Agregar</a></li>
@@ -55,7 +55,7 @@
           <a href="{%url 'home'%}">Inicio</a>
           <a href="{%url 'services'%}">Servicios</a>
           <a href="{%url 'contact'%}">Contactanos</a>
-          <a href="{%url 'cart'%}">Agendar</a>
+          <a href="{%url 'reserve'%}">Agendar</a>
           
           {%if perms.app.add_servicio%}
             <a href="{%url 'add'%}">Agregar</a>
@@ -128,6 +128,10 @@
 
     <!--Js de la validación del registro-->
     <script src="{%static 'js/valRegister.js'%}"></script>
+
+    <!--Js para borrar servicio-->
+    <script src="{%static 'js/delete.js'%}"></script>
+
 
 </body>
 </html>
