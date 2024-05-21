@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'bootstrap5',
     'crispy_forms',
     'crispy_bootstrap5',
+    'paypal.standard.ipn',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -57,13 +58,6 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
-
-PAYMENT_VARIANTS = {
-    "flow": ("django_payments_flow.FlowProvider", {
-        "api_key": "flow_key",
-        "api_secret": "flow_secret",
-    })
-}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
