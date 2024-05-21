@@ -6,6 +6,17 @@ from .models import Servicio
 from django.contrib.auth import authenticate, login
 from django.core.paginator import Paginator
 from django.http import Http404
+
+
+#desde acá dejando la cagá xd
+from django.urls import reverse
+from django.conf import settings
+from django.http import HttpResponse, JsonResponse #pruebas Paypal
+from paypal.standard.forms import PayPalPaymentsForm
+from paypalrestsdk import Payment
+import paypalrestsdk
+import logging
+
 # Create your views here.
 
 #Inicio
