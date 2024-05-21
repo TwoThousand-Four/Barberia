@@ -6,6 +6,15 @@ from .models import Servicio
 from django.contrib.auth import authenticate, login
 from django.core.paginator import Paginator
 from django.http import Http404
+
+#desde acá dejando la cagá xd
+from django.http import HttpResponse, JsonResponse #pruebas Paypal
+from paypal.standard.forms import PayPalPaymentsForm
+
+from paypalrestsdk import Payment
+import paypalrestsdk
+import logging
+
 # Create your views here.
 
 #Inicio
@@ -130,3 +139,58 @@ def delete(request, id):
     servicio.delete()
     messages.success(request, "Servicio eliminado correctamente")
     return redirect(to="list")
+
+# Configurar el logger (pruebas de integración de paypal )
+logging.basicConfig(level=logging.INFO)
+
+def create_payment(request):
+    if request.method == "POST":
+        payment = Payment({
+            "intent": "sale",
+            "payer": {
+                "payment_method": "paypal"
+            },
+            "redirect_urls": {
+                "return_url": "http://localhost:8000/payment/execute",
+                "cancel_url": "http://localhost:8000/payment/cancel"
+            },
+            "transactions": [{
+                "item_list": {
+                    "items": [{
+                        "name": "Item Name",
+                        "sku": "item",
+                        "price": "10.00",
+                        "currency": "USD",
+                        "quantity": 1
+                    }]
+                },
+                "amount": {
+                    "total": "10.00",
+                    "currency": "USD"
+                },
+                "description": "This is the payment transaction description."
+            }]
+        })
+
+        if payment.create():
+            for link in payment.links:
+                if link.rel == "approval_url":
+                    approval_url = str(link.href)
+                    return redirect(approval_url)
+        else:
+            logging.error(payment.error)
+    return render(request, "payment.html")
+
+def execute_payment(request):
+    payment_id = request.GET.get('paymentId')
+    payer_id = request.GET.get('PayerID')
+
+    payment = Payment.find(payment_id)
+
+    if payment.execute({"payer_id": payer_id}):
+        return HttpResponse("Payment executed successfully")
+    else:
+        return HttpResponse("Payment execution failed")
+
+def cancel_payment(request):
+    return HttpResponse("Payment canceled")

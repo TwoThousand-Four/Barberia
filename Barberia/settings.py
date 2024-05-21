@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
-
+import paypalrestsdk
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -37,6 +37,7 @@ USE_THOUSAND_SEPARATOR = True
 # Application definition
 
 INSTALLED_APPS = [
+    'paypal.standard.ipn',
     'admin_interface',
     'colorfield',
     'django.contrib.admin',
@@ -151,3 +152,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'')
 MEDIA_URL = '/img/'
+
+#desde acá las pruebas de la integración de paypal
+
+PAYPAL_CLIENT_ID = 'AeDSB5yfeln_pt3Uo__u2Zwmw8SRerZcttmNtusmTvTLxig7zCNivCRkUq1_NjmHKIcbgbcfLqax0JeC'
+PAYPAL_CLIENT_SECRET = 'ELEKusojcsICnRH5P_BwkJr2e8qBH23uObbFUVmB025EWN8K_xHQNFhGTv4tx4h_8MA8K0V2M6RcOjZs'
+PAYPAL_MODE = 'sandbox'  # Cambiar a 'live' cuando esté listo para producción
+
+
+paypalrestsdk.configure({
+    "mode": PAYPAL_MODE,  # sandbox o live
+    "client_id": 'AeDSB5yfeln_pt3Uo__u2Zwmw8SRerZcttmNtusmTvTLxig7zCNivCRkUq1_NjmHKIcbgbcfLqax0JeC',
+    "client_secret": 'ELEKusojcsICnRH5P_BwkJr2e8qBH23uObbFUVmB025EWN8K_xHQNFhGTv4tx4h_8MA8K0V2M6RcOjZs'
+})
