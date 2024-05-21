@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import paypalrestsdk
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
     'bootstrap5',
     'crispy_forms',
     'crispy_bootstrap5',
+    'paypal.standard.ipn',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -56,13 +58,6 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
-
-PAYMENT_VARIANTS = {
-    "flow": ("django_payments_flow.FlowProvider", {
-        "api_key": "flow_key",
-        "api_secret": "flow_secret",
-    })
-}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -151,3 +146,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'')
 MEDIA_URL = '/img/'
+
+#desde acá las pruebas de la integración de paypal
+
+PAYPAL_CLIENT_ID = 'AaIb9JHxcdgLD2PA-KmMUoLn1fKWxL1Cl40tdBRcgTGnggzZVpk2X6LJ9pA6G5CHSmhTAR-Xt2GniAtQ'
+PAYPAL_CLIENT_SECRET = 'ENhDDiKbB44UGsByR8jc7Dh6izdJGOQE3VB-dm7Xl7pF7U5bBDziZLkpurj6p3lywD6oZ4AjZbCqW27F'
+PAYPAL_MODE = 'sandbox'  # Cambiar a 'live' cuando esté listo para producción
+
+
+paypalrestsdk.configure({
+    "mode": "sandbox",  # sandbox o live
+    "client_id": 'AaIb9JHxcdgLD2PA-KmMUoLn1fKWxL1Cl40tdBRcgTGnggzZVpk2X6LJ9pA6G5CHSmhTAR-Xt2GniAtQ',
+    "client_secret": 'ENhDDiKbB44UGsByR8jc7Dh6izdJGOQE3VB-dm7Xl7pF7U5bBDziZLkpurj6p3lywD6oZ4AjZbCqW27F'
+})
