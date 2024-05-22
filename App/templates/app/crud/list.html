@@ -7,10 +7,10 @@
 {%endblock css%}
 {%block content%}
 {%load static%}
-
 <br>
 <br>
 <div class="container">
+    <!--Tabla de listado de servicios-->
     <div class="card">
         <div class="card-body">
             <h2>Listado de Servicios disponibles</h2>
@@ -43,6 +43,30 @@
             <div>
                 {% include 'app/paginator.html'%}
             </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <h2>Listado de Formularios de contacto</h2>
+            <hr>
+            <table class="table table-striped table-hover table-responsive-sm">
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Tipo de consulta</th>
+                    <th>Mensaje</th>
+                </tr>
+                {%for c in entity2%}
+                    <tr> 
+                        <td>{{ c.id}}</td>
+                        <td>{{ c.nombre | title }}</td>
+                        <td>{{ c.tipo_consulta }}</td>
+                        <td>{{ c.mensaje }}</td>
+                    </tr>
+                {%endfor%}
+            </table>
         </div>
     </div>
 </div>
