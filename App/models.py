@@ -2,6 +2,13 @@ from django.db import models
 
 # Create your models here.
 
+#Clase tipo consulta
+class TipoConsulta(models.Model):
+    nombre = models.CharField(max_length=50, verbose_name="Nombre")
+    
+    def __str__(self):
+        return self.nombre
+
 #Clase Servicio
 class Servicio(models.Model):
     nombre = models.CharField(max_length=50, verbose_name="Nombre")
@@ -18,17 +25,11 @@ class Servicio(models.Model):
         super().delete()
          
 #Clase Contacto
-opciones_consulta = [
-    [0, "Reclamo"],
-    [1, "Consulta sobre un servicio"],
-    [2, "Mensaje positivo"],
-    [3, "Sugerencia"],
-]
 
 class Contacto (models.Model):
     nombre = models.CharField(max_length=50, verbose_name="Nombre")
     correo = models.EmailField(verbose_name="Correo")
-    tipo_consulta = models.IntegerField(choices=opciones_consulta, verbose_name="Tipo de consulta")
+    tipo_consulta = models.ForeignKey(TipoConsulta, on_delete=models.PROTECT, verbose_name="Tipo Consulta")
     mensaje = models.TextField(max_length=1000, verbose_name="Mensaje")
     avisos = models.BooleanField(verbose_name="Avisos")
     
