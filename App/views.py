@@ -6,6 +6,7 @@ from .models import Servicio, Contacto
 from django.contrib.auth import authenticate, login
 from django.core.paginator import Paginator
 from django.http import Http404
+from App.cart import Cart
 
 
 #desde acá dejando la cagá xd
@@ -144,3 +145,28 @@ def delete(request, id):
     servicio.delete()
     messages.success(request, "Servicio eliminado correctamente")
     return redirect(to="list")
+
+
+#Carrito
+def add_service(request, servicio_id):
+    cart = Cart(request)
+    servicio = Servicio.objects.get(id=servicio_id)
+    cart.add_service(servicio)
+    return redirect("reserve")
+
+def delete_service(request, servicio_id):
+    cart = Cart(request)
+    servicio = Servicio.objects.get(id=servicio_id)
+    cart.delete_service(servicio)
+    return redirect("reserve")
+
+def subtract_service(request, servicio_id):
+    cart = Cart(request)
+    servicio = Servicio.objects.get(id=servicio_id)
+    cart.subtract(servicio)
+    return redirect("reserve")
+
+def clean_cart(request):
+    cart = Cart(request)
+    cart.clean()
+    return redirect("reserve")
