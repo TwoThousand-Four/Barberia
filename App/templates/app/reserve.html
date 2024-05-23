@@ -24,7 +24,7 @@
                         <td>{{ s.nombre | title }}</td>
                         <td>{{ s.descripcion }}</td>
                         <td>${{ s.precio }}</td>
-                        <td><a href="#" class="btn btn-outline-dark btn-sm">Agendar</a></td>
+                        <td><a href="{%url 'add_service' s.id%}" class="btn btn-outline-dark btn-sm">Agendar</a></td>
                     </tr>
                 {%endfor%}
             </table>
@@ -33,10 +33,10 @@
             </div>
         </div>
     </div>
+    <div>
+        {%include 'app/cart.html'%}
+    </div>
 </div>
-
-
-<div id="paypal-button-container">
-
-</div>
+<br>
+<br>
 {%endblock content%}

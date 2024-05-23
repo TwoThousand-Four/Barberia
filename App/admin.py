@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Servicio, Contacto
+from .models import Servicio, Contacto, TipoConsulta
 # Register your models here.
 
 class Homeadmin(admin.ModelAdmin):
@@ -15,6 +15,7 @@ class Homeadmin2(admin.ModelAdmin):
     list_per_page = 10
     list_filter=["tipo_consulta"]
 
+admin.site.register(TipoConsulta)
 admin.site.register(Servicio, Homeadmin)
 admin.site.register(Contacto, Homeadmin2)
 
