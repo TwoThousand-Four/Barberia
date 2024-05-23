@@ -37,7 +37,7 @@ USE_THOUSAND_SEPARATOR = True
 # Application definition
 
 INSTALLED_APPS = [
-    'paypal.standard.ipn',
+   
     'admin_interface',
     'colorfield',
     'django.contrib.admin',
