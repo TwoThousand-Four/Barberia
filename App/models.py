@@ -25,7 +25,12 @@ class Servicio(models.Model):
         super().delete()
          
 #Clase Contacto
-
+opciones_consulta = [
+    [0,"Consulta"],
+    [1,"Reclamo"],
+    [2,"Sugerencia"],
+    [3,"Felicitacion"]
+]
 class Contacto (models.Model):
     nombre = models.CharField(max_length=50, verbose_name="Nombre")
     correo = models.EmailField(verbose_name="Correo")
