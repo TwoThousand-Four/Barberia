@@ -15,11 +15,13 @@ class Cart:
             self.cart[id]={
                 "servicio_id": servicio.id,
                 "nombre": servicio.nombre,
+                "precio": servicio.precio,
                 "acumulado": servicio.precio,
                 "cantidad": 1,
             }
         else:
             self.cart[id]["cantidad"] += 1
+            self.cart[id]["precio"] = servicio.precio
             self.cart[id]["acumulado"] += servicio.precio
         self.save_cart()
 
