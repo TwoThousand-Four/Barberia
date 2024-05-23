@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import permission_required
 from .forms import ContactForm, RegisterForm, ServiceForm
 from django.contrib import messages
-from .models import Servicio
+from .models import Servicio, Contacto
 from django.contrib.auth import authenticate, login
 from django.core.paginator import Paginator
 from django.http import Http404
@@ -99,7 +99,9 @@ def add (request):
 
 #Listar
 @permission_required('app.view_servicio')
+@permission_required( 'app.view_contacto')
 def list(request):
+    contactos = Contacto.objects.all()
     servicios = Servicio.objects.all()
     page = request.GET.get('page', 1)
     
@@ -111,6 +113,7 @@ def list(request):
     
     data={
         'entity':servicios,
+        'entity2':contactos,
         'paginator':paginator
     }
     return render(request, 'app/crud/list.html', data)
