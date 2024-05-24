@@ -12,7 +12,7 @@ class TipoConsulta(models.Model):
 #Clase Servicio
 class Servicio(models.Model):
     nombre = models.CharField(max_length=50, verbose_name="Nombre")
-    descripcion = models.CharField(max_length=50, verbose_name="Descripción")
+    descripcion = models.CharField(max_length=150, verbose_name="Descripción")
     imagen = models.ImageField(upload_to='img/servicios', verbose_name="Imagen del servicio", null=True)
     precio =  models.IntegerField(verbose_name="Precio")
     
