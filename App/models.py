@@ -25,7 +25,6 @@ class Servicio(models.Model):
         super().delete()
          
 #Clase Contacto
-
 class Contacto (models.Model):
     nombre = models.CharField(max_length=50, verbose_name="Nombre")
     correo = models.EmailField(verbose_name="Correo")
