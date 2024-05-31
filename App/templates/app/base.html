@@ -42,7 +42,11 @@
 
           {%if user.is_authenticated%}
           <li><a href="{%url 'logout'%}" class="btn btn-outline-dark btn-sm">Cerrar sesión</a></li> |
-          <li ><a href="#" >@{{user.username}}</a></li>
+            {%if user.is_superuser%}
+            <li ><a href="http://127.0.0.1:8000/admin/" >@{{user.username}}</a></li>
+            {%else%}
+            <li ><a href="#" >@{{user.username}}</a></li>
+            {%endif%}
           {%else%}
           <li><a href="{%url 'login'%}">Iniciar sesión</a></li>
           {%endif%}
