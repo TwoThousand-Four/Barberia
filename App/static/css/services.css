@@ -15,6 +15,7 @@ body{
 	flex-wrap: wrap;
 	justify-content: center;
 }
+
 .title-cards{
 	width: 100%;
 	max-width: 1080px;
@@ -24,8 +25,9 @@ body{
 	text-align: center;
 	color: #7a7a7a;
 }
+
 .card{
-	width: 400px;
+	width: 300px;
 	margin: 20px;
 	border-radius: 6px;
 	overflow: hidden;
