@@ -50,6 +50,10 @@ def reserve (request):
     }
     return render(request, 'app/reserve.html', data)
 
+#Comprar
+def pay (request):
+    return render (request, 'app/pay.html')
+
 #Registro
 def register(request):
     data = {

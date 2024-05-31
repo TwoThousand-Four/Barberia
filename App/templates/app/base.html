@@ -42,7 +42,11 @@
 
           {%if user.is_authenticated%}
           <li><a href="{%url 'logout'%}" class="btn btn-outline-dark btn-sm">Cerrar sesión</a></li> |
-          <li ><a href="#" >@{{user.username}}</a></li>
+            {%if user.is_superuser%}
+            <li ><a href="http://127.0.0.1:8000/admin/" >@{{user.username}}</a></li>
+            {%else%}
+            <li ><a href="#" >@{{user.username}}</a></li>
+            {%endif%}
           {%else%}
           <li><a href="{%url 'login'%}">Iniciar sesión</a></li>
           {%endif%}
@@ -55,7 +59,7 @@
         <div class="overlay-content">
           <a href="{%url 'home'%}">Inicio</a>
           <a href="{%url 'services'%}">Servicios</a>
-          <a href="{%url 'contact'%}">Contactanos</a>
+          <a href="{%url 'contact'%}">Contáctanos</a>
           <a href="{%url 'reserve'%}">Agendar</a>
           
           {%if perms.app.add_servicio%}

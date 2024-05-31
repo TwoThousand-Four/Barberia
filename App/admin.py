@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Servicio, Contacto, TipoConsulta
 # Register your models here.
 
+#HomeAdmin del Servicio
 class Homeadmin(admin.ModelAdmin):
     list_display =["id","nombre","precio"]
     search_fields = ["nombre",]
@@ -9,6 +10,7 @@ class Homeadmin(admin.ModelAdmin):
     list_per_page = 10
     list_filter =["precio"]
 
+#HomeAdmin de las Consultas
 class Homeadmin2(admin.ModelAdmin):
     list_display = ["id", "nombre", "tipo_consulta", "mensaje"]
     search_fields= ["tipo_consulta",]

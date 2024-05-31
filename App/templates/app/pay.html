@@ -1,0 +1,22 @@
+{%extends 'app/base.html'%}
+{%load static%}
+{%block css%}
+<link rel="stylesheet" href="{%static 'css/pay.css'%}">
+<link rel="stylesheet" href="{%static 'css/base.css'%}">
+{%endblock css%}
+
+{%block content%}
+{%load static%}
+<script src="{%static 'js/paypalButtons.js'%}"></script>
+
+<div class="container">
+    <div class="card">
+        <br>
+        <strong>Paga con PayPal</strong>
+        <br>
+        <div id="paypal-button-container"></div>
+        <br>
+    </div>
+</div>
+
+{%endblock content%}
