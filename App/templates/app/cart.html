@@ -14,6 +14,7 @@
               <th scope="col">NOMBRE</th>
               <th scope="col">PRECIO</th>
               <th scope="col">CANTIDAD</th>
+              <th scope="col">TOTAL</th>
             </tr>
           </thead>
           <tbody>
@@ -22,7 +23,9 @@
                 <tr>
                 <td>{{value.nombre}}</td>
                 <td>{{value.precio}}</td>
-                <td>{{value.acumulado}}
+                <td>{{value.cantidad}}
+                <td>{{value.acumulado}}</td>
+                &nbsp;
                     <a href="{% url 'add_service' value.servicio_id %}" class="badge btn btn-dark badge-dark">+</a>
                     &nbsp;
                     <a href="{% url 'subtract_service' value.servicio_id %}" class="badge btn btn-dark badge-dark">-</a>
